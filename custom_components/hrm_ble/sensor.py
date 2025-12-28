@@ -5,7 +5,8 @@ from typing import Optional
 
 from bleak import BleakClient
 from bleak_retry_connector import establish_connection
-from habluetooth import BleakClientWrapper
+from habluetooth import HaBleakClientWrapper
+
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.components.bluetooth import async_ble_device_from_address
@@ -65,7 +66,7 @@ class HeartRateSensor(SensorEntity):
             _LOGGER.debug("Connecting to HRM %s", self.mac)
 
             self._client = await establish_connection(
-                BleakClientWrapper,
+                HABleakClientWrapper,
                 device,
                 self.mac,
                 timeout=30.0,
@@ -112,3 +113,4 @@ class HeartRateSensor(SensorEntity):
     async def async_will_remove_from_hass(self):
         if self._client and self._client.is_connected:
             await self._client.disconnect()
+
