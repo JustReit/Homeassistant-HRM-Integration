@@ -1,0 +1,7 @@
+{
+  "name": "BLE Heart Rate Monitor",
+  "content_in_root": false,
+  "domain": "hrm_ble",
+  "country": "DE",
+  "iot_class": "Local Push"
+}
