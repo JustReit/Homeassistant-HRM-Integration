@@ -14,8 +14,10 @@ The integration uses the **standard Heart Rate Service (UUID 0x180D)** and subsc
 - 🧩 **UI-based setup** (MAC address entered in Home Assistant UI)
 - 🧠 Correct parsing of 8-bit and 16-bit HR values
 - ⚡ Low latency, real-time updates
-
+<img width="712" height="176" alt="grafik" src="https://github.com/user-attachments/assets/39ce8476-03f8-4b05-a3de-3da26e43c601" />
 ---
+
+
 
 ## 📦 Requirements
 
@@ -36,3 +38,5 @@ esp32_ble_tracker:
 
 bluetooth_proxy:
   active: true
+
+
