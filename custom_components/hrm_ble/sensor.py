@@ -7,7 +7,7 @@ from bleak import BleakClient
 from bleak_retry_connector import establish_connection
 from habluetooth import HaBleakClientWrapper
 
-from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.sensor import (SensorEntity, SensorStateClass)
 from homeassistant.components.bluetooth import async_ble_device_from_address
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -29,7 +29,8 @@ async def async_setup_entry(
 
 class HeartRateSensor(SensorEntity):
     _attr_icon = "mdi:heart"
-    _attr_unit_of_measurement = "bpm"
+    _attr_native_unit_of_measurement = "bpm"
+    _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_should_poll = False
 
     def __init__(self, hass: HomeAssistant, mac: str, entry_id: str):
